@@ -1,0 +1,46 @@
+{
+  "name": "ahmed-elgamal-store",
+  "version": "2.0.0",
+  "description": "مسك للحديد والبويات - مبيعات ومخزون وحسابات وتقارير وأرباح",
+  "main": "main.js",
+  "author": "Ahmed Elgamal",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis portable"
+  },
+  "devDependencies": {
+    "electron": "^38.1.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.ahmedelgamal.store",
+    "productName": "مسك للحديد والبويات",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "package.json",
+      "build/icon.png"
+    ],
+    "icon": "build/icon.ico",
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.ico",
+      "artifactName": "Misk-Steel-Paints-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "مسك للحديد والبويات"
+    }
+  }
+}
